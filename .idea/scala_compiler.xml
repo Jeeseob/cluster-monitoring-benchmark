@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="Maven 1" modules="benchmarks,cluster-monitoring-benchmark,data-generator">
+      <option name="deprecationWarnings" value="true" />
+      <option name="uncheckedWarnings" value="true" />
+      <option name="featureWarnings" value="true" />
+      <option name="explainTypeErrors" value="true" />
+      <parameters>
+        <parameter value="-Xfatal-warnings" />
+        <parameter value="-Ywarn-unused:imports" />
+        <parameter value="-P:silencer:globalFilters=.*deprecated.*" />
+      </parameters>
+      <plugins>
+        <plugin path="$MAVEN_REPOSITORY$/com/github/ghik/silencer-plugin_2.12.10/1.6.0/silencer-plugin_2.12.10-1.6.0.jar" />
+      </plugins>
+    </profile>
+  </component>
+</project>
