@@ -108,7 +108,7 @@
                     <compilerPlugins>
                         <compilerPlugin>
                             <groupId>com.github.ghik</groupId>
-                            <artifactId>silencer-plugin_${scala.version}</artifactId>
+                            <artifactId>silencer-plugin_${scala.binary.version}</artifactId>
                             <version>1.7.7</version>
                         </compilerPlugin>
                     </compilerPlugins>
