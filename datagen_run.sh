@@ -1,0 +1,1 @@
+java -jar data-generator/target/data-generator-1.0.jar --config-filename data-generator/src/main/resources/config.properties
