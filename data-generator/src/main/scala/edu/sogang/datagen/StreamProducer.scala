@@ -40,33 +40,36 @@ object StreamProducer {
     val parsedArgs = parseArgument(Map(), argList)
     println("test4")
     val prop = new Properties()
-    val inputSteam = this.getClass.getClassLoader.getResourceAsStream(parsedArgs('confFileName).toString)
-
-    try {
-      prop.load(inputSteam)
-    } catch {
-      case e: IOException =>
-        e.printStackTrace()
-    } finally {
-      inputSteam.close()
-    }
+//    val inputSteam = this.getClass.getClassLoader.getResourceAsStream(parsedArgs('confFileName).toString)
+//
+//    try {
+//      prop.load(inputSteam)
+//    } catch {
+//      case e: IOException =>
+//        e.printStackTrace()
+//    } finally {
+//      inputSteam.close()
+//    }
 
     // app config
-    val msgInterval = prop.get("msgInterval").asInstanceOf[String].toInt
-    val dataDir = prop.get("dataDir").asInstanceOf[String]
-
-    // kafka config
-    val topic = prop.get("topic").asInstanceOf[String]
-    val bootstrapServers = prop.get("bootstrapServers").asInstanceOf[String]
-    val keySerializer = prop.get("keySerializer").asInstanceOf[String]
-    val valueSerializer = prop.get("valueSerializer").asInstanceOf[String]
-    val compressionType = prop.get("compressionType").asInstanceOf[String]
-
+//    val msgInterval = prop.get("msgInterval").asInstanceOf[String].toInt
+//    val dataDir = prop.get("dataDir").asInstanceOf[String]
+    val msgInterval = 200
+    val dataDir = "/home/jeeseob/experiment/data/clusterdata-2011-2/task_events"
+    val topic = "clusterdata"
+//
+//    // kafka config
+//    val topic = prop.get("topic").asInstanceOf[String]
+//    val bootstrapServers = prop.get("bootstrapServers").asInstanceOf[String]
+//    val keySerializer = prop.get("keySerializer").asInstanceOf[String]
+//    val valueSerializer = prop.get("valueSerializer").asInstanceOf[String]
+//    val compressionType = prop.get("compressionType").asInstanceOf[String]
+//
     val props = new Properties()
-    props.put("bootstrap.servers", bootstrapServers)
-    props.put("key.serializer", keySerializer)
-    props.put("value.serializer", valueSerializer)
-    props.put("compression.type", compressionType)
+    props.put("bootstrap.servers", "localhost:9092")
+    props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
+    props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
+    props.put("compression.type", "lz4")
 
     var i = 0
     val producer = new KafkaProducer[String, String](props)
