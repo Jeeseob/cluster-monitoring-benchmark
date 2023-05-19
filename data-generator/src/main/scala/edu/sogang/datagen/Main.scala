@@ -12,7 +12,7 @@ import scala.io.BufferedSource
 import scala.sys.exit
 
 
-object StreamProducer {
+object Main {
   def main(args: Array[String]): Unit = {
     print("test")
     val usage =

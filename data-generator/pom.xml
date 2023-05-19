@@ -14,9 +14,22 @@
     <artifactId>data-generator</artifactId>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka.version}</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -26,7 +39,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>edu.sogang.datagen.StreamProducer</mainClass>
+                            <mainClass>edu.sogang.datagen.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -44,7 +57,7 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>edu.sogang.datagen.StreamProducer</mainClass>
+                    <mainClass>edu.sogang.datagen.Main</mainClass>
                 </configuration>
             </plugin>
 
@@ -54,7 +67,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>edu.sogang.datagen.StreamProducer</mainClass>
+                            <mainClass>edu.sogang.datagen.Main</mainClass>
                             <addClasspath>true</addClasspath>
                             <addExtensions>true</addExtensions>
                             <packageName>edu.sogang.datagen</packageName>
@@ -65,19 +78,4 @@
 
         </plugins>
     </build>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <version>${scala.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-clients</artifactId>
-            <version>${kafka.version}</version>
-        </dependency>
-    </dependencies>
-
 </project>
