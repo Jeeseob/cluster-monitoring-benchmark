@@ -7,9 +7,9 @@ import java.io.File
 import java.lang.Thread.sleep
 import java.util.Properties
 
-import scala.annotation.tailrec
+//import scala.annotation.tailrec
 import scala.io.BufferedSource
-import scala.sys.exit
+//import scala.sys.exit
 
 
 object StreamProducer {
