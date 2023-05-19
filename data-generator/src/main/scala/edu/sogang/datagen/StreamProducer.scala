@@ -3,7 +3,7 @@ package edu.sogang.datagen
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 
 
-import java.io.{File, IOException}
+import java.io.File
 import java.lang.Thread.sleep
 import java.util.Properties
 
