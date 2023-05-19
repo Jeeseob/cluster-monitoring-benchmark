@@ -39,7 +39,7 @@ object StreamProducer {
     val parsedArgs = parseArgument(Map(), argList)
 
     val prop = new Properties()
-    val inputSteam = this.getClass.getClassLoader.getResourceAsStream(parsedArgs('confFileName).toString)
+    val inputSteam = this.getClass.getResourceAsStream(parsedArgs('confFileName).toString)
 
     try {
       prop.load(inputSteam)
