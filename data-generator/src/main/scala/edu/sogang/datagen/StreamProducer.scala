@@ -1,7 +1,7 @@
 package edu.sogang.datagen
 
 //import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
-import org.apache.kafka.clients.producer.KafkaProducer
+
 
 //import java.io.File
 //import java.lang.Thread.sleep
@@ -71,7 +71,7 @@ object StreamProducer {
     props.put("compression.type", "lz4")
 
     var i = 0
-    val producer = new KafkaProducer[String, String](props)
+//    val producer = new KafkaProducer[String, String](props)
     println("test5")
 
 //    def getListOfFiles(dir: String): List[File] = {
