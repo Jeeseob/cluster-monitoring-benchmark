@@ -15,31 +15,31 @@ import scala.sys.exit
 object StreamProducer {
   def main(args: Array[String]): Unit = {
     print("test")
-    val usage =
-      """
-    Usage: java -jar ASSEMBLED_JAR_PATH --config-filename FILE_NAME
-    """
-    println("test1")
-    val argList = args.toList
-    type ArgMap = Map[Symbol, Any]
-    println("test2")
-    @tailrec
-    def parseArgument(map: ArgMap, list: List[String]): ArgMap = {
-      list match {
-        case Nil =>
-          map
-        case "--config-filename" :: value :: tail =>
-          parseArgument(map ++ Map('confFileName -> value), tail)
-        case option :: tail =>
-          println("Unknown option : " + option)
-          println(usage)
-          exit(1)
-      }
-    }
-    println("test3")
-    val parsedArgs = parseArgument(Map(), argList)
-    println("test4")
-    val prop = new Properties()
+//    val usage =
+//      """
+//    Usage: java -jar ASSEMBLED_JAR_PATH --config-filename FILE_NAME
+//    """
+//    println("test1")
+//    val argList = args.toList
+//    type ArgMap = Map[Symbol, Any]
+//    println("test2")
+//    @tailrec
+//    def parseArgument(map: ArgMap, list: List[String]): ArgMap = {
+//      list match {
+//        case Nil =>
+//          map
+//        case "--config-filename" :: value :: tail =>
+//          parseArgument(map ++ Map('confFileName -> value), tail)
+//        case option :: tail =>
+//          println("Unknown option : " + option)
+//          println(usage)
+//          exit(1)
+//      }
+//    }
+//    println("test3")
+//    val parsedArgs = parseArgument(Map(), argList)
+//    println("test4")
+//    val prop = new Properties()
 //    val inputSteam = this.getClass.getClassLoader.getResourceAsStream(parsedArgs('confFileName).toString)
 //
 //    try {
