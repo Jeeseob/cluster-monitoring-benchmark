@@ -26,6 +26,11 @@
             <artifactId>kafka-clients</artifactId>
             <version>${kafka.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -39,7 +44,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>edu.sogang.datagen.Main</mainClass>
+                            <mainClass>edu.sogang.datagen.StreamProducer</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

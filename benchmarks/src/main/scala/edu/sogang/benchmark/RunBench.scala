@@ -67,7 +67,7 @@ object RunBench {
     )
 
     val ss = SparkSession.builder
-//      .master("local[*]")
+      .master("local[*]")
       .config(conf)
       .getOrCreate()
 

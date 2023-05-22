@@ -2,7 +2,6 @@ package edu.sogang.datagen
 
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 
-
 import java.io.{File, IOException}
 import java.lang.Thread.sleep
 import java.util.Properties
@@ -12,17 +11,18 @@ import scala.io.BufferedSource
 import scala.sys.exit
 
 
-object Main {
+object StreamProducer {
   def main(args: Array[String]): Unit = {
-    print("test")
-    val usage =
-      """
+
+    val usage = """
     Usage: java -jar ASSEMBLED_JAR_PATH --config-filename FILE_NAME
     """
+
     val argList = args.toList
     type ArgMap = Map[Symbol, Any]
+
     @tailrec
-    def parseArgument(map: ArgMap, list: List[String]): ArgMap = {
+    def parseArgument(map : ArgMap, list: List[String]) : ArgMap = {
       list match {
         case Nil =>
           map
@@ -36,6 +36,7 @@ object Main {
     }
 
     val parsedArgs = parseArgument(Map(), argList)
+
     val prop = new Properties()
     val inputSteam = this.getClass.getClassLoader.getResourceAsStream(parsedArgs('confFileName).toString)
 
